@@ -27,13 +27,27 @@
 //     console.log('test');
 // }
 
+let result = document.querySelector("#result-1.ab")
 
 function shetyobineba() {
     // let name = 'nika'
     // alert("რაიმე ტექსტი")
     // let result = document.getElementById("result-1")
-    let result = document.querySelector("#result-1.ab")
     console.log(result.innerHTML);
     result.innerHTML = "ახალი ტექსტი";
 }
 
+
+function hideText() {
+    // result.style.color = "red"
+    // result.style.backgroundColor = "#333"
+    result.style.display = "none"
+}
+
+function changeStyle() {
+    result.classList.add("dark-mode")
+}
+
+function removeStyle() {
+    result.classList.remove("dark-mode")
+}
