@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <button onclick="changeColor()">შეცვლა</button>
+    <button onclick="changeText('ახალი ტექსტი')">  
+        ტექსტი
+    </button>
+    <div id="div-1" onclick="changeDiv()"> 
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, voluptas ducimus! Possimus inventore non debitis quasi, quos voluptatum ipsum qui reiciendis praesentium nostrum nihil amet accusantium iste tempore architecto dolore.
+    </div>
+    <div onclick="changeDiv(this)"> 
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab veniam tempora non magnam neque eaque, eligendi ipsam expedita hic dicta rerum beatae eius libero numquam ut deserunt labore nesciunt quaerat.
+    </div>
+
+    <img width="300" src="img/geo-1.jpg" onclick="changeImg(this)">
+    
+<script src="./main.js"></script>
+</body>
+</html>
