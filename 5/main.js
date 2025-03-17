@@ -35,7 +35,7 @@ btn2.addEventListener("contextmenu", (event) => {
     //contextmenu არის მაუსის მარჯვენა ღილაკის დაჭერის ივენთი
     // აუქმებს ბრაუზერის ჩაშენებულ ფუნქციებს
     event.preventDefault() 
-    console.log(event.target);
+    console.log(event);
 })
 
 inp1.addEventListener("input", event => {
@@ -45,4 +45,8 @@ inp1.addEventListener("input", event => {
 })
 
 
+//
+//  დაკლიკების ადგილის აბსოლუტური პოზიციის მიღება 
+// event.pageX  პოზიცია მარცხნიდან
+// event.pageY პოზიცია ზემოდან
 
