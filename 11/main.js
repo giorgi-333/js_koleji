@@ -60,6 +60,8 @@ let newList = objsList.filter(item => {
     return item.age > 18
 })
 
+// let newList = objsList.filter(item => item.age > 18 ) // return-ის თვითონა აკეთებს
+
 console.log(objsList);
 
 console.log("ახალი სია: ", newList);
