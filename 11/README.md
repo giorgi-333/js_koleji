@@ -48,3 +48,22 @@ const persons = [
   }
 ]
 ```
+# დავალება 3
+
+ღილაკებზე დაჭერით გამოვიდეს შესაბამისი ქალაქების სია (როგორც სურათზე)
+- ჩატვირთვის დროს ჩანს ყველა
+- გაფილტრვა ხდება მოცემული მასივიდან
+- ღილაკზე დაჭერით ფერი ეცვლება აქტიურ ღილაკს
+
+![თუ სურათი არ ჩანს მითხარით](list1.png)
+
+```js
+const cities = [
+    { name: "Tbilisi", population: 1200000, country: "Georgia", countryCode: "GE" },
+    { name: "Batumi", population: 170000, country: "Georgia", countryCode: "GE" },
+    { name: "Paris", population: 2160000, country: "France", countryCode: "FR" },
+    { name: "Lyon", population: 522000, country: "France", countryCode: "FR" },
+    { name: "Madrid", population: 3280000, country: "Spain", countryCode: "ES" },
+    { name: "Barcelona", population: 1620000, country: "Spain", countryCode: "ES" }
+];
+```
