@@ -23,6 +23,7 @@ Retro traning | 99.90 | ./images/shoe1.jpg | shoes
   font-family: cursive;
 
 ```
+### *გაიფილტროს ჩაწერის დროს*
 
 ![თუ არ ჩანს მითხარით](full-screen.png)  
 
