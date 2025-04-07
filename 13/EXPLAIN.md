@@ -1,108 +1,117 @@
 
 
 
-This project is a simple JavaScript application designed to demonstrate basic functionality and serve as a starting point for further development.
-
-```javascript
-// Your JavaScript code goes here
-console.log("Hello, World!");
-```
-const fruits = ["Banana", "Orange", "Apple", "Mango"];
-fruits.sort();
-fruits.reverse();
-
-This is how JavaScript's internal sorting engine works:
-
-  fruits.sort((a, b) => a.localeCompare(b, 'ka')); // 'ka' = Georgian locale
-
-
 
 # სორტირება JavaScript-ში
 
-სორტირება არის ელემენტების გარკვეული წესრიგით განლაგების პროცესი, მაგალითად, ზრდადობით ან კლებადობით. JavaScript უზრუნველყოფს `sort()` მეთოდს მასივებისთვის, რომელიც შეიძლება მორგებული იყოს შედარების ფუნქციის გამოყენებით.
+სორტირების ჩაშენებული მეთოდი `sort()`.  
+გამოიყენება მასივზე და გამოყენების შემდეგ ამავე მასივში ცვლის თანმიმდევრობას.
 
-## ნაგულისხმევი სორტირება
-ნაგულისხმევად, `sort()` მეთოდი გარდაქმნის ელემენტებს სტრინგებად და სორტირებას ახდენს ლექსიკოგრაფიულად.
+## სორტირება ზრდადობით
+
+მასივში გვაქვს სიტყვები:
 
 ```javascript
-const numbers = [40, 100, 1, 5, 25, 10];
-numbers.sort();
-console.log(numbers); // შედეგი: [1, 10, 25, 40, 5, 100]
+const fruits = ["banana", "apple", "cherry"];
+fruits.sort(); // თანმიმდევრობას ცვლის მოქმედ მასივში
+// იგივეა რაც mas.sort((a,b) => a.localeCompare(b) )
+console.log(fruits); // შედეგი: ["apple", "banana", "cherry"]
 ```
 
-## მორგებული სორტირება შედარების ფუნქციით
-რიცხვების ან კონკრეტული წესრიგით სორტირებისთვის, შეგიძლიათ მიაწოდოთ შედარების ფუნქცია.
+## სორტირება კლებადობით
+```js
+let mas = ["bani", "anbani", "zebra", "gegma"]
+mas.sort((a,b) => b.localeCompare(a) )
+```
 
-### ზრდადობით სორტირება
+## ციფრების ზრდადობით სორტირება
 ```javascript
 const numbers = [40, 100, 1, 5, 25, 10];
 numbers.sort((a, b) => a - b);
 console.log(numbers); // შედეგი: [1, 5, 10, 25, 40, 100]
 ```
 
-### კლებადობით სორტირება
+## კლებადობით სორტირება
 ```javascript
 const numbers = [40, 100, 1, 5, 25, 10];
 numbers.sort((a, b) => b - a);
 console.log(numbers); // შედეგი: [100, 40, 25, 10, 5, 1]
 ```
 
-## სტრინგების სორტირება
-სტრინგები ნაგულისხმევად ლექსიკოგრაფიულად სორტირდება.
+## ციფრებზე სორტირების განმარტება
 
-```javascript
-const fruits = ["banana", "apple", "cherry"];
-fruits.sort();
-console.log(fruits); // შედეგი: ["apple", "banana", "cherry"]
+sort ფუნქციას აქვს ჩაშენებული ლოგიკა (a-b მაგალითზე) რომ 
+
+- თუ შედეგია **უარყოფითი** (a < b), a-ს ჩასვავს b-მდე
+- **დადებითი** შედეგი (a > b), a-ს ჩასვავს b-ს შემდეგ
+- შედეგი **0**, არაფერს შეცვლის
+
+```js
+[40, 100, 1, 5, 25, 10]
+
+40 და 100 → 40 - 100 = -60 → დატოვებს
+
+100 და 1 → 100 - 1 = 99 → შეუცვლის ადგილს → [40, 1, 100, 5, 25, 10]
+
+100 და 5 → 100 - 5 = 95 → შეუცვლის ადგილს → [40, 1, 5, 100, 25, 10]
+...
 ```
 
-### რეგისტრისგან დამოუკიდებელი სორტირება
+
+## რეგისტრისგან დამოუკიდებელი სორტირება
 ```javascript
 const fruits = ["Banana", "apple", "Cherry"];
 fruits.sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
 console.log(fruits); // შედეგი: ["apple", "Banana", "Cherry"]
 ```
+## localeCompare()-ს და toLowerCase()-ის ახსნა
+- `toLowerCase()`-ს გადაყავს სიმბოლოები დაბალ რეგისტრში რადგან მაღალი და დაბალი რეგისტრი არ გაითვალისწინოს შედარებისას  
+- `localeCompare()` ადარებს ორ სიმბოლოს თანმიმდევრობის მიხედვით და აბრუნებს შემდეგ მნიშვნელობებს:
 
-## ობიექტების სორტირება
-ობიექტების სორტირებისას საჭიროა მიუთითოთ შედარების თვისება.
+```js
 
-```javascript
-const people = [
-    { name: "John", age: 25 },
-    { name: "Jane", age: 30 },
-    { name: "Alice", age: 20 }
-];
+'a'.localeCompare('b'); // -1 (ანუ "a" არის "b"-მდე)
+'b'.localeCompare('a'); // 1 ("b" არის "a"-ს შემდეგ)
+'a'.localeCompare('a'); // 0 (იგივეა ორივე)
 
-people.sort((a, b) => a.age - b.age);
-console.log(people);
-// შედეგი: [
-//   { name: "Alice", age: 20 },
-//   { name: "John", age: 25 },
-//   { name: "Jane", age: 30 }
-// ]
+```
+## ქართულ ენაზე სორტირება
+
+თუ გვსურს ქართულ ენაზე ზუსტი სორტირება უნდა გამოვიყენოთ ქვემოთ მოცემული მეთოდი
+
+- უბრალოდ `.sort()-ს` ქართულ ენაზე აქვს შეცდომები
+
+```js 
+
+fruits = ["ვაშლი", "ბანანი", "აბუბალი", "აფინიკი", "გეღვი", "ყურძენი", "დივი"];
+
+fruits.sort((a, b) => a.localeCompare(b, 'ka'));
+
 ```
 
-## სტაბილური სორტირება
-თანამედროვე ძრავებში JavaScript-ის `sort()` სტაბილურია, რაც ნიშნავს, რომ თანაბარი ელემენტები ინარჩუნებენ თავდაპირველ რიგს.
+## თარიღების სორტირება 
 
-```javascript
-const items = [
-    { name: "item1", value: 10 },
-    { name: "item2", value: 10 },
-    { name: "item3", value: 5 }
-];
+`new Date(a) - new Date(b)` აკლებს თარიღებს ერთმანეთს და აბრუნებს რიცხვს `(უარყოფითს, 0-ს ან დადებითს)`
 
-items.sort((a, b) => a.value - b.value);
-console.log(items);
-// შედეგი: [
-//   { name: "item3", value: 5 },
-//   { name: "item1", value: 10 },
-//   { name: "item2", value: 10 }
-// ]
+```js
+
+const records = [ '2023-01-01', '2022-12-31' ] 
+
+records.sort((a, b) => new Date(a) - new Date(b))
+
 ```
 
-## შეჯამება
-- გამოიყენეთ `sort()` ძირითადი სორტირებისთვის.
-- მორგებული სორტირებისთვის მიაწოდეთ შედარების ფუნქცია.
-- ფრთხილად იყავით რიცხვების სორტირებისას ნაგულისხმევი სტრინგზე დაფუძნებული სორტირებით.
-- სორტირება სტაბილურია თანამედროვე JavaScript ძრავებში.
+<!-- 
+[40, 100, 1, 5, 25, 10]
+
+Compare 40 and 100 → 40 - 100 = -60 → OK
+
+Compare 100 and 1 → 100 - 1 = 99 → swap → [40, 1, 100, 5, 25, 10]
+
+Compare 100 and 5 → 100 - 5 = 95 → swap → [40, 1, 5, 100, 25, 10]
+
+Compare 100 and 25 → swap → [40, 1, 5, 25, 100, 10]
+
+Compare 100 and 10 → swap → [40, 1, 5, 25, 10, 100] -->
+
+
