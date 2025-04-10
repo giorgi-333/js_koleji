@@ -72,5 +72,10 @@ let newNumbers = numbers.slice(-1)
 
 console.log(newNumbers);
 
+// select ტეგიდან მონიშნულის მიღება / შეცვლის დროს
+mySelect.addEventListener("change", event => {
+    console.log(event.target.value);
+})
+
 
 
