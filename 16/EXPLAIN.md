@@ -63,7 +63,6 @@ date1.setDate(date1.getDate() + 7); // ამატებს
 | `getMinutes()`          | წუთი (0-59)             |
 | `getSeconds()`          | წამი (0-59)              |
 | `getMilliseconds()`     | მილიწამი (0-999)        |
-| `getTime()`             | მილიწამი  1, 1970.      |
 | `setFullYear(year)`     | ანიჭებს წელს             |
 | `toISOString()`         | გადაყავს ISO 8601 სტანდარტის string-ში          |
 | `toDateString()`        |  `"Sun Apr 13 2025"`                            |
