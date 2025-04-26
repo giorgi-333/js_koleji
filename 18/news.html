@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="index.html">index</a>
+
+    <h1 id="res"></h1>
+
+    <script>
+        // let userId = localStorage.getItem("userId")
+
+        let userId = localStorage.userId
+
+        console.log(localStorage.userId)
+
+        res.innerHTML = userId + " - " + localStorage.userName
+
+        if(localStorage.users) {
+            console.log(localStorage.users)
+
+            let users = JSON.parse(localStorage.users)
+
+            console.log(users)
+        }
+    </script>
+</body>
+</html>
