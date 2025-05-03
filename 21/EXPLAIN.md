@@ -7,7 +7,7 @@
 
 ```js
 
-document.cookie = "user=nika nemsiwveridze; path=/; expires=Fri, Thu, 18 Dec 2026 12:00:00 UTC";
+document.cookie = "user=nika nemsiwveridze; path=/; expires=Fri, 18 Dec 2026 12:00:00 UTC";
 
 
 ```
