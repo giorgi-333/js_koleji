@@ -10,10 +10,10 @@
 const jsonUsers = JSON.stringify(users); 
 
 // შენახვა, სადაც key ამ მაგალითში არის "userList"
-localStorage.setItem("userList", users);
+localStorage.setItem("userList", jsonUsers);
 
 // შენახვის მეორე ვარიანტი - იგივეს აკეთებს
-localStorage.userList = users;
+localStorage.userList = jsonUsers;
 
 ```
 
