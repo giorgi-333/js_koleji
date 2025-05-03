@@ -54,8 +54,8 @@ document.cookie = "user=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
 ```js
 
     const name1 = "user"
-    const decodedCookie = decodeURIComponent(document.cookie);
-    const cookies = decodedCookie.split('; ');
+
+    const cookies = document.cookie.split('; ');
     
     const cookie = cookies.find(c => c.startsWith(name1 + '='));
     
