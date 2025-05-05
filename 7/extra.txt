@@ -1,0 +1,38 @@
+
+
+
+let user = {
+    name: "nika",
+    age: 88,
+    city: "tbilisi",
+    job: true,
+    rame: [1,5,6]
+}
+
+// console.log(user.name);
+
+let users = ["nika", "gia", "lika", "giorgi"]
+
+// console.log(users[2]);
+
+let usersList = [
+    {
+        name: "gia",
+        age: 45
+    },
+    {
+        name: "nika",
+        age: 33
+    }
+]
+
+let numbers = [5, 3, 8, 23, 90]
+
+let result = document.querySelector("#result")
+
+usersList.forEach(item => {
+    console.log(item);
+    result.innerHTML += `
+        <h1> ${item.name} - ${item.age} <h1>
+    `
+})
