@@ -30,7 +30,7 @@ console.log(document.cookie)
 const date = new Date();
 date.setTime(date.getTime() + (2 * 60 * 1000)); //  ამჟამინდელ დროს + 2 წუთი
 
-const expires = "expires=" + d.toUTCString();
+const expires = "expires=" + date.toUTCString();
 
 document.cookie = `testCookie=gamarjoba test; ${expires}; path=/`;
 
