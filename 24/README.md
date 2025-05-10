@@ -14,7 +14,10 @@
 
 - `https://jsonplaceholder.typicode.com/comments?postId={postId}`
 
-### 1.4 პოსტის მიხედვით ქვემოთ ასევე გამოჩნდეს პოსტის ავტორის სახელი და გვარი
+### 1.4.1 პოსტის მიხედვით ქვემოთ ასევე გამოჩნდეს პოსტის ავტორის სახელი და გვარი
+
+- `https://jsonplaceholder.typicode.com/users/{userId}`
+### 1.4.2 ავტორის სახელი და გვარის დაჭერაზე გაიხსნას სრული ინფორმაციის გვერდი რომელსაც იგივე მისამართიდან მიიღებთ:
 
 - `https://jsonplaceholder.typicode.com/users/{userId}`
 
